@@ -1,6 +1,7 @@
 package com.example.springboard_20211003.controller;
 
 import com.example.springboard_20211003.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/board/**")
+@RequiredArgsConstructor
 public class BoardContoller {
-    private BoardService boardService;
+    private final BoardService boardService;
 
     @GetMapping("/hello")
     public String Hello() {
