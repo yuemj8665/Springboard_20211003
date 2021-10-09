@@ -27,4 +27,10 @@ public class BoardContoller {
         return "boards/hello";
     }
 
+    @GetMapping("/main")
+    public String main(Model model) {
+        model.addAttribute("list", boardService.boardList());
+        return "boards/main";
+    }
+
 }
