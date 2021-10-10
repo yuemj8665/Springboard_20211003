@@ -15,4 +15,16 @@
         FROM tbl_board;
     </select>
 
+    <select id="getBoard" parameterType="Long" resultType="com.example.springboard_20211003.domain.Board">
+        SELECT
+        *
+        FROM tbl_board WHERE boardId=#{boardId};
+    </select>
+    
+    <insert id="uploadBoard" parameterType="com.example.springboard_20211003.domain.Board">
+        INSERT INTO tbl_board (title, content, name)
+        VALUES
+        (#{title},#{content},#{name});
+    </insert>
+
 </mapper>
