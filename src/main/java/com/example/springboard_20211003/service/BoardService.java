@@ -36,8 +36,8 @@ public class BoardService {
     }
 
     @Transactional
-    public int deleteBoard(Long boardId) {
-        return boardMapper.deleteBoard(boardId);
+    public void deleteBoard(Long boardId) {
+        boardMapper.deleteBoard(boardId);
     }
 
 }

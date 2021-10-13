@@ -41,7 +41,6 @@ public class BoardContoller {
 
     @GetMapping("/upload")
     public String uploadBoardForm() {
-
         return "/boards/upload";
     }
 
