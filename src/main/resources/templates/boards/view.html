@@ -10,10 +10,11 @@
 
     <script th:inline="javascript">
         $(document).on('ready', function (e) {
-            var form = $("form");
+            var form = $("#form");
             var boardId = [[${view.boardId}]];
             // deleteButton이라는 Id를 가진 버튼을 클릭 했을 시 로직
             $(document).on('click', '#deleteButton', function (e) {
+                $('#form').attr("action","delete");
                 form.append("<input type='hidden' name='boardId' value='"+boardId+"'>");
                 form.append("<input type='hidden' name='_method' value='delete'>");
                 console.log(form)
@@ -23,11 +24,11 @@
             $(document).on('click', '#updateButton', function (e) {
                 var str = "<input class='form-control' width='250'" +
                     "placebolde='제목 입력' id='updateTitle'>";
-                $("title").html(str);
+                $("#title").html(str);
                 str="<textarea class='form-control' placeholder='내용 입력' " +
                     "id='updateContent'></textarea>"
                 $("#content").html(str);
-                $("#content").attr("id", "updateConfirmButton");
+                $("#updateButton").attr("id", "updateConfirmButton");
             });
             $(document).on('click', '#updateConfirmButton', function (e) {
                 $('#form').attr("action", "update");
@@ -48,7 +49,7 @@
 <body>
 
 <div class="container">
-    <p>글 번호1 : [[${view.boardId}]]</p>
+    <p>글 번호 : [[${view.boardId}]]</p>
     <p id="title">글 제목 : [[${view.title}]]</p>
     <p>글쓴이 : [[${view.name}]]</p>
     내용 :
