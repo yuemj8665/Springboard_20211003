@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script th:inline="javascript">
+    </script>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+    <div class="container">
+        <input id="userID"/>
+        <input id="userPWD"/>
+        <button id="loginButton" class="btn btn-danger btn-sm float-right">로그인</button>
+        <button id="createUserButton" class="btn btn-danger btn-sm float-right">회원 가입</button>
+        <form id="form" th:action="@{/}" method="post"></form>
+
+    </div>
+</body>
+</html>

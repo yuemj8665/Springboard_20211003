@@ -7,6 +7,15 @@ CREATE TABLE tbl_board
     read     integer default 0,
     primary key (boardId)
 );
+CREATE TABLE board_user
+    (
+        id          varchar(30) not null,
+        password    varchar(30) not null,
+        name        varchar(30) not null,
+        age         integer not null,
+        address     varchar(100) not null,
+        primary key (id)
+);
 
 INSERT INTO tbl_board(title, content, name) VALUES ('title1','content1','name1');
 INSERT INTO tbl_board(title, content, name) VALUES ('title2','content2','name2');
