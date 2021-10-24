@@ -13,13 +13,16 @@
     <title>로그인 페이지</title>
 </head>
 <body>
-    <div class="container">
-        <input id="userID"/>
-        <input id="userPWD"/>
-        <button id="loginButton" class="btn btn-danger btn-sm float-right">로그인</button>
-        <button id="createUserButton" class="btn btn-danger btn-sm float-right">회원 가입</button>
-        <form id="form" th:action="@{/}" method="post"></form>
+<div class="container">
+    <form action="boards/login" method="post">
+        <div class="form-group">
+            <input id="userID" name="id" type="text"/>
+            <input id="userPWD" name="password" type="password"/>
+        </div>
+        <button id="loginButton" class="btn btn-danger btn-sm float-right" type="submit">로그인</button>
+    </form>
+    <button id="createUserButton" class="btn btn-danger btn-sm float-right" onclick="location.href='./createUserPage.html'">회원 가입</button>
 
-    </div>
+</div>
 </body>
 </html>
