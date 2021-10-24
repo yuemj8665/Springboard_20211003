@@ -13,4 +13,15 @@ public class Board_user {
     private String name;
     private int age;
     private String address;
+
+    @Override
+    public String toString() {
+        return "Board_user{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

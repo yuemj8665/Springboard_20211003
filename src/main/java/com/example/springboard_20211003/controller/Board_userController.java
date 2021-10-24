@@ -24,15 +24,20 @@ public class Board_userController {
     // 로그인 페이지
     @GetMapping("/loginPage")
     public String loginPage(Board_user user) {
-
         return "boards/loginPage";
     }
 
     // 로그인 기능 구현
     @PostMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("loginValueTest","123123123");
-        return "redirect:boards/main";
+    public String login(Model model, Board_user user) {
+        int countUser = service.loginUser(user);
+        if (countUser == 1) {
+            System.out.println("countUser : " + user.toString());
+            return "boards/main";
+        } else {
+            System.out.println("사용자가 없습니다.");
+            return "redirect:/board/loginPage";
+        }
     }
 
     // 회원 가입 페이지
