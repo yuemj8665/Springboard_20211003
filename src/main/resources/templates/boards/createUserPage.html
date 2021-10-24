@@ -13,14 +13,15 @@
     <title>회원가입 페이지</title>
 </head>
 <body>
-    <div class="container">
-        <p>ID :<input id="id" type="text" name="title"/></p>
+<div class="container">
+    <form id="form" th:action="@{/board/createUser}" method="post">
+        <p>ID :<input id="id" type="text" name="id"/></p>
         <p>Password : <input id="password" type="password" name="password"/></p>
         <p>Name : <input id="name" type="text" name="name"/></p>
         <p>Age : <input id="age" type="text" name="age"/></p>
         <p>Address : <input id="address" type="text" name="address"/></p>
         <button id="createUserButton" class="btn btn-danger btn-sm float-right" type="submit">회원 가입</button>
-        <form id="form" th:action="@{/createUser}" method="post"></form>
-    </div>
+    </form>
+</div>
 </body>
 </html>

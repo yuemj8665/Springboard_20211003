@@ -23,7 +23,8 @@ public class Board_userController {
 
     // 로그인 페이지
     @GetMapping("/loginPage")
-    public String loginPage() {
+    public String loginPage(Board_user user) {
+
         return "boards/loginPage";
     }
 

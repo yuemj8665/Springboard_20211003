@@ -15,4 +15,8 @@ public class Board_userService {
     public void createUser(Board_user user) {
         board_userMapper.createUser(user);
     }
+
+    public int loginUser(Board_user user) {
+        return board_userMapper.loginUser(user);
+    }
 }

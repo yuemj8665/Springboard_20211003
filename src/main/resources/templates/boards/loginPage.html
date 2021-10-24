@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
 <html lang="en">
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%; /* Could be more or less, depending on screen size */
+    }
+</style>
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
     <script th:inline="javascript">
+        $(document).on('ready', function (e) {
+            // $(document).on('click', '#loginButton', function (f) {
+                $("#modal").show();
+            // });
+            //팝업 Close 기능
+            function close_pop(flag) {
+                $('#myModal').hide();
+            };
+        });
     </script>
     <meta charset="UTF-8">
     <title>로그인 페이지</title>
@@ -19,10 +51,34 @@
             <input id="userID" name="id" type="text"/>
             <input id="userPWD" name="password" type="password"/>
         </div>
-        <button id="loginButton" class="btn btn-danger btn-sm float-right" type="submit">로그인</button>
+        <button id="loginButton"
+                class="btn btn-danger btn-sm float-right"
+                type="submit">로그인</button>
     </form>
-    <button id="createUserButton" class="btn btn-danger btn-sm float-right" onclick="location.href='./createUserPage.html'">회원 가입</button>
-
+    <button id="createUserButton" class="btn btn-danger btn-sm float-right" onclick="location.href='createUserPage'">회원 가입</button>
 </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <p style="text-align: center;">
+            <span style="font-size: 14pt;">
+                <b>
+                    <span style="font-size: 24pt;">공지</span>
+                </b>
+            </span>
+        </p>
+        <p style="text-align: center; line-height: 1.5;"><br />여기에 내용</p>
+        <p><br /></p>
+        <div style="cursor:pointer;background-color:#DDDDDD;text-align: center;padding-bottom: 10px;padding-top: 10px;" onClick="close_pop();">
+                <span class="pop_bt" style="font-size: 13pt;" >
+                     닫기
+                </span>
+        </div>
+    </div>
+</div>
+<!--End Modal-->
+
 </body>
 </html>
