@@ -13,7 +13,7 @@
             resultType="Integer">
         SELECT count(*)
         FROM board_user
-        WHERE id = #{id}
+        WHERE id = #{id} AND password =#{password}
     </select>
 
     <update id="updateBoard" parameterType="com.example.springboard_20211003.domain.Board">
