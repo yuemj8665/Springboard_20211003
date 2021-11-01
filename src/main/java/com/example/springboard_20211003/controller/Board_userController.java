@@ -30,13 +30,13 @@ public class Board_userController {
     // 로그인 기능 구현
     @PostMapping("/login")
     public String login(Model model, Board_user user) {
-        int countUser = service.loginUser(user);
+        boolean countUser = service.loginUser(user);
         System.out.println(countUser);
-        if (countUser == 1) {
+        if (countUser) {
             System.out.println("countUser : " + user.toString());
             return "redirect:/board/main";
         }
-        return "redirect:/board/loginPage";
+        return "/board/loginErrorPage";
     }
 
     // 회원 가입 페이지
