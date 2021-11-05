@@ -36,7 +36,7 @@ public class Board_userController {
             System.out.println("countUser : " + user.toString());
             return "redirect:/board/main";
         }
-        return "/board/loginErrorPage";
+        return "boards/loginErrorPage";
     }
 
     // 회원 가입 페이지
