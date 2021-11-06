@@ -16,7 +16,7 @@ public class Board_userService {
         board_userMapper.createUser(user);
     }
 
-    public boolean loginUser(Board_user user) {
-        return (Integer)board_userMapper.loginUser(user) == 1 ? true : false;
+    public boolean searchUser(Board_user user) {
+        return (Integer)board_userMapper.searchUser(user) == 1 ? true : false;
     }
 }

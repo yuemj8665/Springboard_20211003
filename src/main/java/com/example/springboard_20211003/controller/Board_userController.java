@@ -17,8 +17,13 @@ public class Board_userController {
 
     @PostMapping("/createUser")
     public String createUser(Board_user user) {
-        service.createUser(user);
-        return "redirect:/board/loginPage";
+        boolean countUser = service.searchUser(user);
+        if (!countUser) {
+            service.createUser(user);
+            return "redirect:/board/loginPage";
+        } else {
+            return "boards/createUserErrorPage";
+        }
     }
 
     // 로그인 페이지
@@ -30,7 +35,7 @@ public class Board_userController {
     // 로그인 기능 구현
     @PostMapping("/login")
     public String login(Model model, Board_user user) {
-        boolean countUser = service.loginUser(user);
+        boolean countUser = service.searchUser(user);
         System.out.println(countUser);
         if (countUser) {
             System.out.println("countUser : " + user.toString());

@@ -9,7 +9,7 @@
             (#{id},#{password},#{name},#{age},#{address})
     </insert>
 
-    <select id="loginUser" parameterType="com.example.springboard_20211003.domain.Board_user"
+    <select id="searchUser" parameterType="com.example.springboard_20211003.domain.Board_user"
             resultType="Integer">
         SELECT count(*)
         FROM board_user

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script th:inline="javascript">
+    </script>
+    <meta charset="UTF-8">
+    <title>에러 페이지</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+        <h1 class="text-center my-5">오류!</h1>
+        <div class="myCardList">
+            <div class="text-center">
+                <p class="txt1 secret">
+                    이미 존재하는 회원 입니다! 다른 ID를 사용해주세요.
+                </p>
+                <div class="mt-1">
+                    <button onclick="history.back()" class="yellowBt">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

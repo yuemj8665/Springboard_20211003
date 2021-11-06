@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface Board_userMapper {
     void createUser(Board_user user);
-    int loginUser(Board_user user);
+    int searchUser(Board_user user);
 }
