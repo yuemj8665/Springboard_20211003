@@ -27,6 +27,15 @@ public class BoardContoller {
         return "boards/hello";
     }
 
+    /**
+     * 모달창 테스트를 위한
+     * @return
+     */
+    @GetMapping("/modalTest")
+    public String modalTest() {
+        return "boards/modalTest";
+    }
+
     @GetMapping("/main")
     public String main(Model model) {
         model.addAttribute("list", boardService.boardList());
