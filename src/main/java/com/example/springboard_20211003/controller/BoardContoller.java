@@ -27,6 +27,12 @@ public class BoardContoller {
         return "boards/hello";
     }
 
+    // 로그인 페이지
+    @GetMapping("/loginPage")
+    public String loginPage(){
+        return "boards/loginPage";
+    }
+
     /**
      * 모달창 테스트를 위한
      * @return

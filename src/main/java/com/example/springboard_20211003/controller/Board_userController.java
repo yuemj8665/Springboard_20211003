@@ -26,12 +26,6 @@ public class Board_userController {
         }
     }
 
-    // 로그인 페이지
-    @GetMapping("/loginPage")
-    public String loginPage(Board_user user) {
-        return "boards/loginPage";
-    }
-
     // 로그인 기능 구현
     @PostMapping("/login")
     public String login(Model model, Board_user user) {
